@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prens Tutu: Gölgelerin Tacı — Modüler Strateji & RPG Motoru v3.0</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- React 18 -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Babel Standalone -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    .royal-font { font-family: 'Cinzel', serif; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #090d16; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+    @keyframes pulseBorder {
+      0%, 100% { border-color: rgba(234, 179, 8, 0.3); box-shadow: 0 0 15px rgba(234, 179, 8, 0.15); }
+      50% { border-color: rgba(234, 179, 8, 0.8); box-shadow: 0 0 25px rgba(234, 179, 8, 0.4); }
+    }
+    .royal-glow { animation: pulseBorder 3s infinite; }
+
+    .province-node {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .province-node:hover {
+      filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.8));
+      transform: scale(1.06);
+    }
+  </style>
+</head>
+<body class="select-none">
+  <div id="root">
+    <div class="min-h-screen flex flex-col items-center justify-center p-6 text-center">
+      <div class="animate-spin rounded-full h-14 w-14 border-t-2 border-b-2 border-yellow-400 mb-4"></div>
+      <h1 class="text-2xl font-bold royal-font text-yellow-400 mb-2">Prens Tutu: Gölgelerin Tacı v3.0</h1>
+      <p class="text-sm text-slate-400">Modüler Oyun Motoru Yükleniyor (engine-core, data-story, engine-combat, ui-app)...</p>
+    </div>
+  </div>
+
+  <!-- MODÜL 1: Çekirdek Motor, Ses Sentezleyici, Eyalet Sistemi ve Rakip Yapay Zeka -->
+  <script src="./engine-core.js"></script>
+
+  <!-- MODÜL 2: Genişletilmiş Hikaye, Lore, Fraksiyon Görevleri ve Kararnameler -->
+  <script src="./data-story.js"></script>
+
+  <!-- MODÜL 3: Taktiksel Muharebe (Birim + 3v2 Zar) ve Anzak Düello Motoru -->
+  <script src="./engine-combat.js"></script>
+
+  <!-- MODÜL 4: Ana React Arayüzü ve Etkileşimli Harita -->
+  <script type="text/babel" src="./ui-app.js"></script>
+</body>
+</html>
